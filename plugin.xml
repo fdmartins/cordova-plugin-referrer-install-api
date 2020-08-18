@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-referrer-install-api" version="1.0.0">
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+  <name>Referrer Install API Android</name>
+  <description>Simple tracking Install Referrer new API(Android)</description>
+  <author>Fabio Martins</author>
+  <license>MIT License</license>
+
+  <js-module src="www/referrerinstall.js" name="ReferrerInstallApiPlugin">
+    <clobbers target="referrerinstall" />
+  </js-module>
+
+
+  <platform name="android">
+    <framework src="com.google.android.gms:play-services-analytics:$GMS_VERSION" />
+    <preference name="GMS_VERSION" default="11.0.1"/>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="ReferrerInstallApiPlugin">
+        <param name="android-package" value="br.com.fdmartins.plugins.referrerinstall.ReferrerInstallApiPlugin" />
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    </config-file>
+
+    <!-- Add support for devices without Google Play Services installed. 
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <receiver android:name="com.google.android.gms.analytics.AnalyticsReceiver" android:enabled="true">
+        <intent-filter>
+          <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH" />
+        </intent-filter>
+      </receiver>
+      <service android:name="com.google.android.gms.analytics.AnalyticsService" android:enabled="true" android:exported="false"/>
+      <receiver android:name="com.google.android.gms.analytics.CampaignTrackingReceiver" android:enabled="true" android:exported="true">
+        <intent-filter>
+          <action android:name="com.android.vending.INSTALL_REFERRER" />
+        </intent-filter>
+      </receiver>
+      <service android:name="com.google.android.gms.analytics.CampaignTrackingService" android:enabled="true" android:exported="false"/>
+    </config-file>
+     -->
+
+    <source-file src="android/ReferrerInstallApiPlugin.java" target-dir="src/br/com/fdmartins/plugins/referrerinstall" />
+   
+  </platform>
+
+</plugin>

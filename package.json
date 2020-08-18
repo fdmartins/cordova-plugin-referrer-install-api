@@ -1,0 +1,21 @@
+{
+  "name": "cordova-plugin-referrer-install-api",
+  "version": "1.0.0",
+  "description": "Android Referrer Install API",
+  "cordova": {
+    "id": "cordova-plugin-referrer-install-api",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fdmartins/cordova-plugin-referrer-install-api.git"
+  },
+  "keywords": [
+    "cordova"
+  ],
+  "author": "Fabio Martins",
+  "license": "MIT",
+  "types": ""
+}
