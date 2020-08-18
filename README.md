@@ -19,7 +19,7 @@ dependencies {
 # Use
 
 ```js
-//In your 'deviceready' handler, set up your Analytics tracker:
+//In your 'deviceready' handler:
 window.referrerinstall.getReferrer(
   function(success){
     //anything
